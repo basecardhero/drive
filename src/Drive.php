@@ -67,6 +67,8 @@ class Drive implements DriveInterface
     /**
      * Create a drive file.
      *
+     * @link https://developers.google.com/drive/api/v3/mime-types
+     *
      * @param string $name
      * @param string $mimeType
      * @param array|null $optional

@@ -56,6 +56,8 @@ echo get_class($permissions); // \Google_Service_Drive_Permission
 ```
 #### Create a file
 
+See [mime types](https://developers.google.com/drive/api/v3/mime-types).
+
 ``` php
 $file = $spreadsheet->create('My File', 'application/vnd.google-apps.file');
 
