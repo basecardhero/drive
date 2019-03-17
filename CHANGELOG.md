@@ -2,7 +2,7 @@
 
 All notable changes to `drive` will be documented in this file.
 
-## 0.1.0 - 2019-03-XX
+## 0.1.0 - 2019-03-15
 
 - Initial release.
 - `Drive::getService()` method added to get the `Google_Service_Drive` instance.

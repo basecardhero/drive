@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/basecardhero/drive/master.svg)](https://travis-ci.org/basecardhero/drive)
 [![codecov](https://codecov.io/gh/basecardhero/drive/branch/master/graph/badge.svg)](https://codecov.io/gh/basecardhero/drive)
-[![License](https://poser.pugx.org/basecardhero/drive/license?c=0)](https://packagist.org/packages/basecardhero/drive)
+[![License](https://poser.pugx.org/basecardhero/drive/license)](https://packagist.org/packages/basecardhero/drive)
 [![composer.lock](https://poser.pugx.org/basecardhero/drive/composerlock)](https://packagist.org/packages/basecardhero/drive)
 
 _This package was created for a project I am working on and does not fully support Google services (or the way you may want it to). Feel free to add functionality by creating a pull request. See [contributing](CONTRIBUTING.md)._
