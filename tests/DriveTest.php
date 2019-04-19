@@ -25,7 +25,7 @@ class DriveTest extends TestCase
     /**
      * Override of parent::setUp().
      */
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
 

@@ -4,3 +4,5 @@ build/
 coverage/
 docs/
 vendor/
+
+.phpunit.result.cache
