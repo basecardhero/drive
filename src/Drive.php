@@ -101,4 +101,16 @@ class Drive implements DriveInterface
     {
         return $this->create($name, 'application/vnd.google-apps.folder');
     }
+
+    /**
+     * Delete a file.
+     *
+     * @param string $fileId
+     *
+     * @return void
+     */
+    public function delete(string $fileId) : void
+    {
+        $this->service->files->delete($fileId);
+    }
 }

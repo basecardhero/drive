@@ -116,6 +116,19 @@ class DriveTest extends TestCase
         $this->assertInstanceOf(\Google_Service_Drive_DriveFile::class, $this->drive->createFolder($name));
     }
 
+    /** @test */
+    public function delete_will_delete_a_file()
+    {
+        $fileId = md5(time());
+
+        $this->service->files = $this->mock();
+        $this->service->files->shouldReceive('delete')
+            ->with($fileId)
+            ->andReturn(null);
+
+        $this->drive->delete($fileId);
+    }
+
     /**
      * Create a Google_Service_Drive_DriveFile.
      *

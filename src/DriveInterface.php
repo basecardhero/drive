@@ -44,4 +44,13 @@ interface DriveInterface
      * @return \Google_Service_Drive_DriveFile
      */
     public function createFolder(string $name) : \Google_Service_Drive_DriveFile;
+
+    /**
+     * Delete a file.
+     *
+     * @param string $fileId
+     *
+     * @return void
+     */
+    public function delete(string $fileId) : void;
 }
