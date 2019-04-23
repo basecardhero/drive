@@ -126,7 +126,9 @@ class DriveTest extends TestCase
             ->with($fileId)
             ->andReturn(null);
 
-        $this->drive->delete($fileId);
+        $this->assertNull(
+            $this->drive->delete($fileId)
+        );
     }
 
     /**
