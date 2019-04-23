@@ -50,7 +50,7 @@ echo $file->id; // 'efTpcKY4TL2DWbExuvBuRxlmVFtsxpAeyHmMfxpwcobePxKV'
 
 ``` php
 $fileId = 'efTpcKY4TL2DWbExuvBuRxlmVFtsxpAeyHmMfxpwcobePxKV';
-$permissions = $spreadsheet->setPermission($fileId, 'anyone', 'reader');
+$permissions = $drive->setPermission($fileId, 'anyone', 'reader');
 
 echo get_class($permissions); // \Google_Service_Drive_Permission
 ```
@@ -59,7 +59,7 @@ echo get_class($permissions); // \Google_Service_Drive_Permission
 See [mime types](https://developers.google.com/drive/api/v3/mime-types).
 
 ``` php
-$file = $spreadsheet->create('My File', 'application/vnd.google-apps.file');
+$file = $drive->create('My File', 'application/vnd.google-apps.file');
 
 echo get_class($file); // \Google_Service_Drive_DriveFile
 echo $file->id; // 'efTpcKY4TL2DWbExuvBuRxlmVFtsxpAeyHmMfxpwcobePxKV'
@@ -68,10 +68,18 @@ echo $file->id; // 'efTpcKY4TL2DWbExuvBuRxlmVFtsxpAeyHmMfxpwcobePxKV'
 #### Create a folder
 
 ``` php
-$folder = $spreadsheet->createFolder('My Folder');
+$folder = $drive->createFolder('My Folder');
 
 echo get_class($folder); // \Google_Service_Drive_DriveFile
 echo $folder->id; // 'efTpcKY4TL2DWbExuvBuRxlmVFtsxpAeyHmMfxpwcobePxKV'
+```
+
+#### Delete a file
+
+``` php
+$fileId = 'efTpcKY4TL2DWbExuvBuRxlmVFtsxpAeyHmMfxpwcobePxKV';
+
+$drive->delete($fileId); // null
 ```
 
 ### Testing
