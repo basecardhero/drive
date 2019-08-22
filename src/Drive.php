@@ -1,9 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace BaseCardHero\Drive;
+
 
 class Drive implements DriveInterface
 {
+
     /**
      * @var \Google_Service_Drive
      */
@@ -22,7 +26,7 @@ class Drive implements DriveInterface
      *
      * @return \Google_Service_Drive
      */
-    public function getService() : \Google_Service_Drive
+    public function getService(): \Google_Service_Drive
     {
         return $this->service;
     }
@@ -35,7 +39,7 @@ class Drive implements DriveInterface
      *
      * @return \Google_Service_Drive_DriveFile
      */
-    public function get(string $fileId, array $attributes = []) : \Google_Service_Drive_DriveFile
+    public function get(string $fileId, array $attributes = []): \Google_Service_Drive_DriveFile
     {
         $attributes = array_replace([
             'fields' => 'id',
@@ -53,7 +57,7 @@ class Drive implements DriveInterface
      *
      * @return \Google_Service_Drive_Permission
      */
-    public function setPermission(string $fileId, string $type, string $role) : \Google_Service_Drive_Permission
+    public function setPermission(string $fileId, string $type, string $role): \Google_Service_Drive_Permission
     {
         return $this->service->permissions->create(
             $fileId,
@@ -75,16 +79,16 @@ class Drive implements DriveInterface
      *
      * @return \Google_Service_Drive_DriveFile
      */
-    public function create(string $name, string $mimeType, array $optional = null) : \Google_Service_Drive_DriveFile
+    public function create(string $name, string $mimeType, array $optional = null): \Google_Service_Drive_DriveFile
     {
         $optional = array_replace([
-            'fields' => 'id'
+            'fields' => 'id',
         ], (array) $optional);
 
         return $this->service->files->create(
             new \Google_Service_Drive_DriveFile([
                 'name' => $name,
-                'mimeType' => $mimeType
+                'mimeType' => $mimeType,
             ]),
             $optional
         );
@@ -97,7 +101,7 @@ class Drive implements DriveInterface
      *
      * @return \Google_Service_Drive_DriveFile
      */
-    public function createFolder(string $name) : \Google_Service_Drive_DriveFile
+    public function createFolder(string $name): \Google_Service_Drive_DriveFile
     {
         return $this->create($name, 'application/vnd.google-apps.folder');
     }
@@ -106,11 +110,10 @@ class Drive implements DriveInterface
      * Delete a file.
      *
      * @param string $fileId
-     *
-     * @return void
      */
-    public function delete(string $fileId) : void
+    public function delete(string $fileId): void
     {
         $this->service->files->delete($fileId);
     }
+
 }
